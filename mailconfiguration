@@ -1,0 +1,33 @@
+import subprocess
+import smtplib
+from email.mime.text import MIMEText
+
+threshold = 10
+partition = "/"
+
+def report_via_email():
+    smtp_ssl_host = 'smtp.gmail.com'  # smtp.mail.yahoo.com
+    smtp_ssl_port = 465
+    username = 'devops.bpr@gmail.com'
+    password = 'karthi@29'
+    sender = 'devops.bpr@gmail.com'
+    targets = ['devops.bpr@gmail.com', 'Bathina.Pullarao@emeriocorp.com']
+
+    msg = MIMEText('Server running out of disk space')
+    msg['Subject'] = 'Low disk space warning'
+    msg['From'] = sender
+    msg['To'] = ', '.join(targets)
+
+    server = smtplib.SMTP_SSL(smtp_ssl_host, smtp_ssl_port)
+    server.login(username, password)
+    server.sendmail(sender, targets, msg.as_string())
+    server.quit()
+
+def check_once():
+    df = subprocess.Popen(["df","-h"], stdout=subprocess.PIPE)
+    for line in df.stdout:
+        splitline = line.decode().split()
+        if splitline[5] == partition:
+         if int(splitline[4][:-1]) > threshold:
+          report_via_email()
+check_once()
