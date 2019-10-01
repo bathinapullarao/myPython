@@ -11,7 +11,7 @@ def report_via_email():
     username = 'devops.bpr@gmail.com'
     password = 'karthi@29'
     sender = 'devops.bpr@gmail.com'
-    targets = ['devops.bpr@gmail.com', 'Bathina.Pullarao@emeriocorp.com']
+    targets = ['devops.bpr@gmail.com', 'bathina.oracle@gmail.com']
 
     msg = MIMEText('Server running out of disk space')
     msg['Subject'] = 'Low disk space warning'
