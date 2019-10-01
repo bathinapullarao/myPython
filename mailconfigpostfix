@@ -11,7 +11,7 @@ def send_mail():
         FROM = "root"
         TO = ["Kannan.Vairamani@emeriocorp.com","Vajrala.Saisharma@emeriocorp.com","Bathina.Pullarao@emeriocorp.com"]
         SUBJECT = "Test Mail:Server running out of disk space"
-        TEXT = "This message was sent from WEBAP53 server by using Python script."
+        TEXT = "This message was sent from the server by using Python script."
         # Prepare actual message
 
         message = """\
