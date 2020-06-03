@@ -1,0 +1,8 @@
+$ wget https://raw.githubusercontent.com/pixelb/ps_mem/master/ps_mem.py
+$ chmod a+x ps_mem.py 
+$ sudo python ps_mem.py 
+
+ Private   +   Shared  =  RAM used       Program
+    :
+  11.1 MiB +   8.8 MiB =  20.3 MiB       php-fpm-7.0 (5)
+  1.5 GiB  + 117.1 MiB =   1.7 GiB       httpd (99)
